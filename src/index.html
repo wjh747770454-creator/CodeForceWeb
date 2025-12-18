@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeForce Web - GitHub Actions Demo</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-code"></i>
+                <h1>CodeForce<span class="highlight">Web</span></h1>
+            </div>
+            <p class="tagline">GitHub Actions 流水线测试环境</p>
+        </header>
+
+        <main>
+            <section class="dashboard">
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fas fa-info-circle"></i>
+                        <h2>项目信息</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="info-item">
+                            <span class="label">仓库名称：</span>
+                            <span class="value" id="repo-name">Loading...</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">当前分支：</span>
+                            <span class="value" id="current-branch">Loading...</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">最后提交：</span>
+                            <span class="value" id="last-commit">Loading...</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fas fa-cogs"></i>
+                        <h2>流水线状态</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="pipeline-status">
+                            <div class="status-item">
+                                <span class="status-label">代码检查</span>
+                                <span class="status-badge pending" id="status-lint">待运行</span>
+                            </div>
+                            <div class="status-item">
+                                <span class="status-label">测试执行</span>
+                                <span class="status-badge pending" id="status-test">待运行</span>
+                            </div>
+                            <div class="status-item">
+                                <span class="status-label">构建验证</span>
+                                <span class="status-badge pending" id="status-build">待运行</span>
+                            </div>
+                        </div>
+                        <button id="simulate-pipeline" class="btn-primary">
+                            <i class="fas fa-play"></i> 模拟流水线运行
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="actions">
+                <h2><i class="fas fa-bolt"></i> 可用操作</h2>
+                <div class="action-buttons">
+                    <button class="btn-secondary" id="btn-test">
+                        <i class="fas fa-vial"></i> 运行测试
+                    </button>
+                    <button class="btn-secondary" id="btn-build">
+                        <i class="fas fa-hammer"></i> 构建项目
+                    </button>
+                    <button class="btn-secondary" id="btn-deploy">
+                        <i class="fas fa-rocket"></i> 模拟部署
+                    </button>
+                </div>
+                <div id="output" class="output-panel">
+                    <div class="output-header">
+                        <span>控制台输出</span>
+                        <button id="clear-output">清空</button>
+                    </div>
+                    <pre id="output-content">等待操作...</pre>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>GitHub用户: <strong>wjh747770454-creator</strong></p>
+            <p>邮箱: wjh747770454@gmail.com</p>
+            <p class="timestamp">页面加载时间: <span id="load-time"></span></p>
+        </footer>
+    </div>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>
